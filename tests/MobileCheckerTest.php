@@ -6,7 +6,7 @@ use Kbarut\Telecommunication\MobileChecker;
 
 it('empty input', function () {
 	
-    $mobileChecker = Mockery::mock(MobileChecker::class);
+	$mobileChecker = Mockery::mock(MobileChecker::class);
 	
 	$res = $mobileChecker->validate('');
 	
@@ -16,7 +16,7 @@ it('empty input', function () {
 
 it('wrong characters count', function () {
 	
-    $mobileChecker = Mockery::mock(MobileChecker::class);
+    	$mobileChecker = Mockery::mock(MobileChecker::class);
 	
 	$res = $mobileChecker->validate('015019123');
 	            	
@@ -26,7 +26,7 @@ it('wrong characters count', function () {
 
 it('wrong characters types', function () {
 
-    $mobileChecker = Mockery::mock(MobileChecker::class);
+   	$mobileChecker = Mockery::mock(MobileChecker::class);
 	
 	$res = $mobileChecker->validate('0150191234A');
 	
@@ -36,7 +36,7 @@ it('wrong characters types', function () {
 
 it('assignable no country code german mobile num', function () {
 
-    $mobileChecker = Mockery::mock(MobileChecker::class);
+    	$mobileChecker = Mockery::mock(MobileChecker::class);
 	
 	$res = $mobileChecker->validate('01501912345');
 	
@@ -46,7 +46,7 @@ it('assignable no country code german mobile num', function () {
 
 it('assignable german mobile num with country code "0049"', function () {
 
-    $mobileChecker = Mockery::mock(MobileChecker::class);
+    	$mobileChecker = Mockery::mock(MobileChecker::class);
 	
 	$res = $mobileChecker->validate('00491501912345');
 	
@@ -56,7 +56,7 @@ it('assignable german mobile num with country code "0049"', function () {
 
 it('assignable german mobile num with country code "+49"', function () {
 
-    $mobileChecker = Mockery::mock(MobileChecker::class);
+    	$mobileChecker = Mockery::mock(MobileChecker::class);
 	
 	$res = $mobileChecker->validate('+491501912345');
 	
