@@ -14,9 +14,7 @@ It takes into account the fact that when dialed, a german mobile phone number ca
 
 Germany mobile operators numbering system (Source: German government):
 
-[Overview]
-
-(https://www.bundesnetzagentur.de/SharedDocs/Downloads/EN/Areas/Telecommunications/Companies/NumberManagement/MobileServices/Mobileservicees_Numbering%20Plan_2017.pdf?__blob=publicationFile&v=2)
+[Overview](https://www.bundesnetzagentur.de/SharedDocs/Downloads/EN/Areas/Telecommunications/Companies/NumberManagement/MobileServices/Mobileservicees_Numbering%20Plan_2017.pdf?__blob=publicationFile&v=2)
 
 My own breakdown as tables (all Excel files):
 
@@ -30,16 +28,22 @@ Breakdown of the numbering system:
 
 note: NDC = "National Destination Code"
 
-1) Format without the country code = 0 + NDC + [ X<sub>1</sub>,X<sub>2</sub>, ... ,X<sub>s</sub>] , X<sub>1**≤**j<**≤**s</sub> = 0,1,2...9
+<b>1. Format without the country code = 0 + NDC + [ X<sub>1</sub>,X<sub>2</sub>, ... ,X<sub>s</sub>] </b>, X<sub>1**≤**j<**≤**s</sub> = 0,1,2...9
+
 Minimum total digits count: 10
+
 Maximum total digits count: 11
 
-2) Format with country code ''0049 " = 0049 + NDC + [ X<sub>1</sub>,X<sub>2</sub>, ... ,X<sub>s</sub>] , X<sub>1**≤**j<**≤**s</sub> = 0,1,2...9
+<b>2. Format with country code ''0049 " = 0049 + NDC + [ X<sub>1</sub>,X<sub>2</sub>, ... ,X<sub>s</sub>] </b>, X<sub>1**≤**j<**≤**s</sub> = 0,1,2...9
+
 Minimum total digits count: 14
+
 Minimum total digits count: 15
 
-3) Format with country code ''+49 " = +49 + NDC + [ X<sub>1</sub>,X<sub>2</sub>, ... ,X<sub>s</sub>] , X<sub>1**≤**j<**≤**s</sub> = 0,1,2...9
+<b>3. Format with country code ''+49 " = +49 + NDC + [ X<sub>1</sub>,X<sub>2</sub>, ... ,X<sub>s</sub>] </b>, X<sub>1**≤**j<**≤**s</sub> = 0,1,2...9
+
 Minimum total characters count: 13
+
 Minimum total characters count: 14
 
 # Installation
