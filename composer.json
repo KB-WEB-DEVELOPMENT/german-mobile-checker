@@ -1,0 +1,25 @@
+{
+    "name": "kbarut/mobile-checker",
+    "description": "PHP 8.0 package to determine if a user input matches an assignable private customer mobile phone number in Germany",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kâmi Barut-Wanayo",
+            "email": "kamibarut@yahoo.com"
+        }
+    ],
+	"require": {
+		"php": ">=8.0",
+		"mockery/mockery": "dev-master"
+	},
+    "autoload": {
+        "psr-4": {
+            "Kbarut\\Telecommunication\\": "src/",
+			"Kbarut\\Telecommunication\\Tests\\": "tests/"
+        } 
+    },
+	"scripts": {
+		"test": "vendor/bin/pest"
+	}
+}
