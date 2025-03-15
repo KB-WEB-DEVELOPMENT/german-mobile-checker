@@ -9,17 +9,17 @@
             "email": "kamibarut@yahoo.com"
         }
     ],
-	"require": {
-		"php": ">=8.0",
-		"mockery/mockery": "dev-master"
-	},
+    "require": {
+	 "php": ">=8.0",
+	 "mockery/mockery": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "Kbarut\\Telecommunication\\": "src/",
-			"Kbarut\\Telecommunication\\Tests\\": "tests/"
+	    "Kbarut\\Telecommunication\\Tests\\": "tests/"
         } 
     },
-	"scripts": {
-		"test": "vendor/bin/pest"
-	}
+    "scripts": {
+       "test": "vendor/bin/pest"
+    }
 }
