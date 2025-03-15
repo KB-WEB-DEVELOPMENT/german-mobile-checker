@@ -18,9 +18,6 @@ class MobileChecker
 		
 		$cleaned = $this->clean($input);
 
-		if ($this->emptyInput($cleaned) === true)
-		   return false;
-
 		$chars_count = $this->getLength($cleaned);
 
 		if (($chars_count < 10) or ($chars_count > 15))
@@ -59,22 +56,22 @@ class MobileChecker
 	* @return string
 	*/
 	public function clean(string $input): string
-    	{
+	{
 		$first =  substr(preg_replace('/\s+/','',$input),0,1);
- 
+
 		if ($first === '+') {
 
 			$rest = substr(preg_replace('/\s+/','',$input),1);
 
-			$cleaned = $first . preg_replace("/[^0-9]/",'',$rest);
+			$cleaned = (ctype_digit(($rest))) ? $first . $rest : 'always-wrong!!!!!!'; 
 
 		} else {
 
-			$cleaned = preg_replace("/[^0-9]/",'',$input);
-		}	
-
+			$cleaned = (ctype_digit(($input))) ? $cleaned : 'always-wrong!!!!!!'; 
+		}
+		
 		return $cleaned;
-       }
+	}
 	
 	/**
 	* Returns the $cleaned_input string characters count (>0)
