@@ -38,13 +38,13 @@ Maximum total digits count: 11
 
 Minimum total digits count: 14
 
-Minimum total digits count: 15
+Maximum total digits count: 15
 
 <b>3. Format with country code ''+49 " = +49 + NDC + [ X<sub>1</sub>,X<sub>2</sub>, ... ,X<sub>s</sub>] </b>, X<sub>1**≤**j<**≤**s</sub> = 0,1,2...9
 
 Minimum total characters count: 13
 
-Minimum total characters count: 14
+Maximum total characters count: 14
 
 # Installation
 
