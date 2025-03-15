@@ -4,7 +4,7 @@ namespace Kbarut\Telecommunication;
 
 class MobileChecker
 {
-	/**
+   	/**
 	* Determines if the $input string is a valid german operator backed mobile phone number
 	* entered with or without any of the two country area code possible: '0049', '+49'
 	*
@@ -12,7 +12,7 @@ class MobileChecker
 	* @return bool
 	*/	
 	public function validate(string $input): bool
-    {		
+    	{		
 		if ($this->emptyInput($input) === true)
 			return false;
 		
@@ -34,9 +34,8 @@ class MobileChecker
 			'0049' => $this->checkInternationalLong($cleaned),
 		};
 		
-		return $res;
-			
-    }
+		return $res;			
+    	}
 	
 	/**
 	* returns true if the string is empty, false otherwise
@@ -45,9 +44,9 @@ class MobileChecker
 	* @return bool
 	*/	
 	public function emptyInput(string $input): bool
-    {
-		return (strlen($input) === 0);
-    }	
+    	{
+	   return (strlen($input) === 0);
+   	}	
 
 	/**
 	* Removes all non digit characters from the $input string
@@ -60,8 +59,7 @@ class MobileChecker
 	* @return string
 	*/
 	public function clean(string $input): string
-    {
-
+    	{
 		$first =  substr(preg_replace('/\s+/','',$input),0,1);
  
 		if ($first === '+') {
@@ -76,7 +74,8 @@ class MobileChecker
 		}	
 
 		return $cleaned;
-    }
+       }
+	
 	/**
 	* Returns the $cleaned_input string characters count (>0)
 	*
@@ -85,10 +84,11 @@ class MobileChecker
 	* @param string $cleaned_input
 	* @return int 
 	*/
-    public function getLength(string $cleaned_input): int
-    {
-		return strlen($cleaned_input);
+    	public function getLength(string $cleaned_input): int
+        {
+	    return strlen($cleaned_input);
 	}
+	
 	/**
 	* Returns '0049' if '0049' are the first four characters of $cleaned_input 
 	* Returns '+49' if '+49' are the first three characters of $cleaned_input
@@ -100,7 +100,7 @@ class MobileChecker
 	* @return string  
 	*/
 	public function getCallType(string $cleaned_input): string
-    {
+        {
 		$call_type = 'national';
 		
 		$firstFour = substr($cleaned_input,0,4);
@@ -113,7 +113,8 @@ class MobileChecker
 			$call_type = '+49';
 		
 		return $call_type;
-    }
+        }
+	
 	/**
 	* Returns true if number is a valid commercial german mobile phone number entered without the country code,
 	* returns false otherwise.
@@ -123,8 +124,9 @@ class MobileChecker
 	* @param string $cleaned_input
 	* @return bool 
 	*/
+	
 	public function checkNational(string $cleaned_input): bool
-    {
+        {
 		$res = false;
 		
 		$user_ndc = null;
@@ -165,31 +167,28 @@ class MobileChecker
 						$user_ndc = null;
 						$min = null;
 						$max = null;
-
-					}		
-					
+					}			
 				}	
-
-			}
-			
-			if ($res === true)
-				return $res;					
-		}
+			   }
+			   if ($res === true)
+			      return $res;					
+		    }
 		
-		return $res;
-	}
+		    return $res;
+	    }
 		
-	/**
-	* Returns true if number is a valid commercial german mobile phone number entered with '+49' as the country code,
-	* returns false otherwise.
-	*
-	* (see proper use of this method in conjunction with other methods in class)
-	*
-	* @param string $cleaned_input
-	* @return bool
-	*/
-    public function checkInternationalShort(string $cleaned_input): bool 
-    {
+	    /**
+	    * Returns true if number is a valid commercial german mobile phone number entered with '+49' as the country code,
+	    * returns false otherwise.
+	    *
+	    * (see proper use of this method in conjunction with other methods in class)
+	    *
+	    * @param string $cleaned_input
+	    * @return bool
+	    */
+    
+	    public function checkInternationalShort(string $cleaned_input): bool 
+            {
 		$res = false;
 		
 		$user_ndc = null;
@@ -212,10 +211,10 @@ class MobileChecker
 				$user_ndc = substr($cleaned_input,0,$ndc_length);
 					
 				if ($key === 'min_digits_count')
-					$min = $value;
+				    $min = $value;
 					
 				if ($key === 'max_digits_count')
-					$max = $value;
+				    $max = $value;
 		
 				if ( (strlen($user_ndc) != 0) and (strlen($min) != 0) and (strlen($max) != 0) ) {
 					
@@ -230,30 +229,28 @@ class MobileChecker
 						$user_ndc = null;
 						$min = null;
 						$max = null;
-
-					}						
-					
+					}											
 				}	
-		
 			}
-			
 			if ($res === true)
 				return $res;		
-		}
-		
+		 }
 		return $res;
-    }
-	/**
-	* Returns true if number is a valid commercial german mobile phone number entered with '0049' as the country code,
-	* returns false otherwise.
-	*
-	* (see proper use of this method in conjunction with other methods in class)
-	*
-	* @param string $cleaned_input
-	* @return bool 
-	*/
-    public function checkInternationalLong(string $cleaned_input): bool 
-    {
+             }
+	
+	      /**
+	      * Returns true if number is a valid commercial german mobile phone number entered with '0049' as the country code,
+	      * returns false otherwise.
+	      *
+	      * (see proper use of this method in conjunction with other methods in class)
+	      *
+	      * @param string $cleaned_input
+	      * @return bool 
+	      */
+    
+	      public function checkInternationalLong(string $cleaned_input): bool 
+    	      {
+		
 		$res = false;
 		
 		$user_ndc = null;
@@ -269,17 +266,17 @@ class MobileChecker
 			foreach( $arr as $key => $value) {
 				
 				if ($key === 'NDC') {
-					$ndc2 = $value;
-					$ndc_length = strlen($ndc2);
+				    $ndc2 = $value;
+				    $ndc_length = strlen($ndc2);
 				}
 
 				$user_ndc = substr($cleaned_input,0,$ndc_length);
 					
 				if ($key === 'min_digits_count')
-					$min = $value;
+				    $min = $value;
 					
 				if ($key === 'max_digits_count')
-					$max = $value;
+				    $max = $value;
 		
 				if ( (strlen($user_ndc) != 0) and (strlen($min) != 0) and (strlen($max) != 0) ) {
 					
@@ -294,19 +291,13 @@ class MobileChecker
 						$user_ndc = null;
 						$min = null;
 						$max = null;
-
-					}						
-					
+					}										
 				}	
-		
-			}
-			
-			if ($res === true)
-				return $res;					
-		}
-		
-		return $res;
-
-    }
+			   }
+			   if ($res === true)
+			      return $res;					
+		    }	
+		    return $res;
+               }
     		
 }
