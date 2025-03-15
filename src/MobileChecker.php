@@ -143,9 +143,8 @@ class MobileChecker
 				if ($key === 'NDC') {
 					$ndc2 = '0' . $value;	
 					$ndc_length = strlen($ndc2);
+					$user_ndc = substr($cleaned_input,0,$ndc_length);
 				}
-
-				$user_ndc = substr($cleaned_input,0,$ndc_length);
 					
 				if ($key === 'min_digits_count')
 					$min = $value;
@@ -205,10 +204,9 @@ class MobileChecker
 				if ($key === 'NDC') {
 					$ndc2 = $value;
 					$ndc_length = strlen($ndc2);
+					$user_ndc = substr($cleaned_input,0,$ndc_length);
 				}
-
-				$user_ndc = substr($cleaned_input,0,$ndc_length);
-					
+		
 				if ($key === 'min_digits_count')
 				    $min = $value;
 					
@@ -267,9 +265,8 @@ class MobileChecker
 				if ($key === 'NDC') {
 				    $ndc2 = $value;
 				    $ndc_length = strlen($ndc2);
+				    $user_ndc = substr($cleaned_input,0,$ndc_length);			
 				}
-
-				$user_ndc = substr($cleaned_input,0,$ndc_length);
 					
 				if ($key === 'min_digits_count')
 				    $min = $value;
