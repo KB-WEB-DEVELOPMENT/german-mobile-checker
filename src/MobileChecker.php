@@ -14,17 +14,17 @@ class MobileChecker
 	public function validate(string $input): bool
     	{		
 		if ($this->emptyInput($input) === true)
-			return false;
+		    return false;
 		
 		$cleaned = $this->clean($input);
 
 		if ($this->emptyInput($cleaned) === true)
-			return false;
+		   return false;
 
 		$chars_count = $this->getLength($cleaned);
 
 		if (($chars_count < 10) or ($chars_count > 15))
-			return false;
+		   return false;
 		
 		$call_type = $this->getCallType($cleaned);
 		
