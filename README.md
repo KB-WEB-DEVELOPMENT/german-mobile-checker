@@ -6,7 +6,7 @@
  
  [4. License](#license)
  
-# Project Description
+# Project Description 
 
 This PHP 8.0 package determines if a PHP variable of data type 'string' matches one of Germany mobile operators commercial mobile phone number formats.
 
