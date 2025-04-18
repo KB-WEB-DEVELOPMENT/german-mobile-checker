@@ -13,7 +13,7 @@ class MobileChecker
 	*/	
 	public function validate(string $input): bool
     	{		
-		if ($this->emptyInput($input) === true)
+		if ($this->emptyInput($input) == true)
 		    return false;
 		
 		$cleaned = $this->clean($input);
@@ -168,7 +168,7 @@ class MobileChecker
 					}			
 				}	
 			   }
-			   if ($res === true)
+			   if ($res)
 			      return $res;					
 		    }
 		
@@ -229,8 +229,8 @@ class MobileChecker
 					}											
 				}	
 			}
-			if ($res === true)
-				return $res;		
+			if ($res)
+			    return $res;		
 		 }
 		return $res;
              }
@@ -290,7 +290,7 @@ class MobileChecker
 					}										
 				}	
 			   }
-			   if ($res === true)
+			   if ($res)
 			      return $res;					
 		    }	
 		    return $res;
